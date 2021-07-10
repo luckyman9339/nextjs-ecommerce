@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platforms",
+  "info": {
+    "name": "platform"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "uid",
+      "required": true
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

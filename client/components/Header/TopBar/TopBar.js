@@ -32,10 +32,23 @@ return (
 
 
 function Search() {
+  const [searchStr, setSearchStr] = useState("");
+  const [load, setLoad] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (load) {
+      router.push(`/search?query=${searchStr}`);
+    }
+    setLoad(true);
+  }, [searchStr]);
+
   return (
     <Input
       id="search-game"
       icon={{ name: "search" }}
+      value={router.query.query}
+      onChange={(_, data) => setSearchStr(data.value)}
     />
   );
 }
